@@ -30,7 +30,8 @@ public class HttpURLConnectionServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html");
 		
-		String param =new String(request.getParameter("param").getBytes("ISO-8859-1"),"UTF-8"); ;
+		//解决乱码问题
+		String param =new String(request.getParameter("param").getBytes("ISO-8859-1"),"UTF-8"); 
 		
 		System.out.println("param is "+param);
 		PrintWriter out = response.getWriter();
